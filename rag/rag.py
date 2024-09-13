@@ -27,7 +27,7 @@ load_dotenv()
 os.environ['LANGCHAIN_TRACING_V2'] = 'true'
 os.environ['LANGCHAIN_ENDPOINT'] = 'https://api.smith.langchain.com'
 
-VALID_CLOUDS = ["Automotive", "Scheduler", "Manufacturing", "Financial Services", "Life Sciences", "Health", "Loyalty"]
+VALID_CLOUDS = ["Automotive", "Scheduler", "Manufacturing", "Financial Services", "Life Sciences", "Health", "Loyalty", "Experience"]
 VALID_SOLUTIONS = ["Financial Service Cloud Actionable Segmentation", "Financial Goals", "Brokerage CRM Solution", "Scheduler Common Components", "Warranty Lifecycle Management for Automotive", "Vehicle Inventory Search", "Warranty Lifecycle & Asset Service Management", "Home Health", "Intelligent Appointment Management", "Integrated Care Management", "Participant Enrollment", "Patient Support Programs", "Loyalty Traceability", "HC Referral Management"]
 
 # Load the release notes and solutions
