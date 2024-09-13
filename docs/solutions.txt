@@ -13,7 +13,7 @@ Solutions, their descriptions and their clouds
     2. Clouds: ['Insurance Cloud']
 4. Scheduler Common Components
     1. Solution Name: Scheduler Common Components
-    2. Clouds: ['Salesforce Scheduler']
+    2. Clouds: ['Scheduler']
     3. Description: Common components for Scheduling includes ready to use layouts and permissions for scheduling service appointments.
 5. Warranty Lifecycle Management for Automotive
     1. Solution Name: Warranty Lifecycle Management for Automotive
