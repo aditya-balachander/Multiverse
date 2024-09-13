@@ -2,29 +2,29 @@ Solutions, their descriptions and their clouds
 
 1. Financial Service Cloud Actionable Segmentation:
     1. Solution Name: Financial Service Cloud Actionable Segmentation
-    2. Clouds: ['Financial Services Cloud']
+    2. Clouds: ['Financial Services']
     3. Description: Actionable Segmentation enables you to segment similar client profiles, curate them, and design timely and personalized client outreach programs. Actionable list definitions and actionable lists are the key elements of the Actionable Segmentation feature.
 2. Financial Goals
     1. Solution Name: Financial Goals
-    2. Clouds: ['Financial Services Cloud']
+    2. Clouds: ['Financial Services']
     3. Description: Financial Goals is now available with your Financial Services Cloud license and has exciting new features using OmniStudio. Financial Goals FlexCard gives your users quick access to their client's goals. Add a priority and status to each goal to help your clients quickly achieve their target value on the goals that are most important to them. The Goal Members FlexCard on the Financial Goals record page lets your users view members of a goal.
 3. Brokerage CRM Solution
     1. Solution Name: Brokerage CRM Solution
-    2. Clouds: ['Insurance Cloud']
+    2. Clouds: ['Insurance']
 4. Scheduler Common Components
     1. Solution Name: Scheduler Common Components
     2. Clouds: ['Scheduler']
     3. Description: Common components for Scheduling includes ready to use layouts and permissions for scheduling service appointments.
 5. Warranty Lifecycle Management for Automotive
     1. Solution Name: Warranty Lifecycle Management for Automotive
-    2. Clouds: ['Automotive Cloud']
+    2. Clouds: ['Automotive']
 6. Vehicle Inventory Search
     1. Solution Name: Vehicle Inventory Search
-    2. Clouds: ['Automotive Cloud']
+    2. Clouds: ['Automotive']
     3. Description: Vehicle Inventory Search helps you set up Criteria-Based Search and Filter features to help users search and filter vehicle inventory data. The feature helps you design your own search experience like which fields to use as query criteria, which fields to use for result display, and which fields to use to sort and aggregate the results.
 7. Warranty Lifecycle & Asset Service Management
     1. Solution Name: Warranty Lifecycle & Asset Service Management
-    2. Clouds: ['Manufacturing Cloud']
+    2. Clouds: ['Manufacturing']
     3. Description: Manage the complete warranty lifecycle—from warranty administration to claims collection and adjudication. Also, setup your Asset Service Console to have a 360 view of the Asset. The installable brings in -
         1. A fully loaded Asset Service Console
         2. Asset Hierarchy ARC Template
@@ -35,27 +35,27 @@ Solutions, their descriptions and their clouds
         7. This solution includes custom metadata and sample data to help you quickly get started with the Warranty Lifecycle & Asset Service Management features. You can use and extend the preconfigured asset service console, warranty capture and the adjudication process for warranty claims for Manufacturing, and more.
 8. Home Health
     1. Solution Name: Home Health
-    2. Clouds: ['Health Cloud']
+    2. Clouds: ['Health']
     3. Description: Home Health in Health Cloud optimizes home healthcare operations by collecting patient preferences, scheduling visits and resources, and utilizing Salesforce Field Service features for enhanced scheduling and mobile access to patient data.
 9. Intelligent Appointment Management
     1. Solution Name: Intelligent Appointment Management
-    2. Clouds: ['Health Cloud']
+    2. Clouds: ['Health']
     3. Description: Intelligent Appointment Management Streamline complex scheduling tasks by using multi-step scheduling to book a series of related appointments at once. Easily modify appointments when patients and providers want to change appointment dates, times, and other details.
 10. Integrated Care Management
     1. Solution Name: Integrated Care Management
-    2. Clouds: ['Health Cloud']
+    2. Clouds: ['Health']
     3. Description: Efficiently Manage Care Gaps in Health Cloud with the Integrated Care Management feature, which care managers can use to create care gaps automatically by evaluating a clinical measure. Care gaps can be imported, created manually, or linked to care plans. The enhanced interface provides a comprehensive patient view of care gaps and associated measures. Care managers can seamlessly view and modify problems, goals, and interventions directly within the care plan interface, eliminating the need to navigate to other pages.
 11. HC Referral Management
     1. Solution Name: HC Referral Management
-    2. Clouds: ['Health Cloud']
+    2. Clouds: ['Health']
     3. Description: About Referral Management for Guest Users Referral Management in Health Cloud helps Care Coordinators enhance outcomes by ensuring timely and accurate processing of referrals. Guest Users have the ability to create a referral and upload relevant documents. The unauthenticated web portal uses reCAPTCHA verification for Guest Referrals.
 12. Participant Enrollment
     1. Solution Name: Participant Enrollment
-    2. Clouds: ['Life Sciences Cloud']
+    2. Clouds: ['Life Sciences']
     3. Description: About Participant Enrollment The process of actually including an individual into the trial after their identification and verification that all trial-specific eligibility criteria are met
 13. Patient Support Programs
     1. Solution Name: Patient Support Programs
-    2. Clouds: ['Life Sciences Cloud']
+    2. Clouds: ['Life Sciences']
     3. Description: About Patient Support Programs Patient services program enables pharmaceutical companies to deliver patient engagement programs - such as benefits verification, financial assistance and outcomes management to help patients (on their therapies) manage their disease and achieve better patient outcomes.
 14. Loyalty Traceability
     1. Solution Name: Loyalty Traceability
