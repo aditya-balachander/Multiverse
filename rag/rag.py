@@ -18,6 +18,7 @@ from constants import (
     LLM_OUTPUT_TEMPLATE,
     CONFIRMATION_TEMPLATE
     )
+from typing import Literal
 
 # Load secrets
 from dotenv import load_dotenv
@@ -25,6 +26,9 @@ load_dotenv()
 
 os.environ['LANGCHAIN_TRACING_V2'] = 'true'
 os.environ['LANGCHAIN_ENDPOINT'] = 'https://api.smith.langchain.com'
+
+VALID_CLOUDS = ["Automotive", "Scheduler", "Manufacturing", "Financial Services", "Life Sciences", "Health", "Loyalty"]
+VALID_SOLUTIONS = ["Financial Service Cloud Actionable Segmentation", "Financial Goals", "Brokerage CRM Solution", "Scheduler Common Components", "Warranty Lifecycle Management for Automotive", "Vehicle Inventory Search", "Warranty Lifecycle & Asset Service Management", "Home Health", "Intelligent Appointment Management", "Integrated Care Management", "Participant Enrollment", "Patient Support Programs", "Loyalty Traceability", "HC Referral Management"]
 
 # Load the release notes and solutions
 def load_documents(file_path, loader_class, chunk_size=1000, chunk_overlap=200):
@@ -67,15 +71,15 @@ class SalesforceRecommendation(BaseModel):
     Represents a recommendation for Salesforce clouds, solutions, and org type.
     """
 
-    clouds: list[str] = Field(description="List of recommended Salesforce clouds")
-    solutions: list[str] = Field(description="List of recommended Salesforce solutions (can be empty)")
-    org_type: str = Field(description="Recommended Salesforce org type")
+    clouds: list[Literal[tuple(VALID_CLOUDS)]] = Field(description="List of recommended Salesforce clouds")
+    solutions: list[Literal[tuple(VALID_SOLUTIONS)]] = Field(description="List of recommended Salesforce solutions (can be empty)")
+    org_type: Literal["Developer", "Partner Developer", "Enterprise", ""] = Field(description="Recommended Salesforce org type")
     need_more_info: bool = Field(description="Indicates if more information is needed from the user")
     message: str = Field(description="Message for user in case more information is needed")
 
 class CloudsAndSolutions(BaseModel):
-    clouds: list[str] = Field(description="List of recommended Salesforce clouds")
-    solutions: list[str] = Field(description="List of recommended Salesforce solutions (can be empty)")
+    clouds: list[Literal[tuple(VALID_CLOUDS)]] = Field(description="List of recommended Salesforce clouds")
+    solutions: list[Literal[tuple(VALID_SOLUTIONS)]] = Field(description="List of recommended Salesforce solutions (can be empty)")
 
 # Main function to process user input
 def process_chat_history(chat_history):
@@ -165,9 +169,9 @@ def process_chat_history(chat_history):
 def check_user_confirmation(chat_history):
 
     class Confirmation(BaseModel):
-        clouds: list[str] = Field(description="List of recommended Salesforce clouds")
-        solutions: list[str] = Field(description="List of recommended Salesforce solutions (can be empty)")
-        org_type: str = Field(description="Recommended Salesforce org type")
+        clouds: list[Literal[tuple(VALID_CLOUDS)]] = Field(description="List of recommended Salesforce clouds")
+        solutions: list[Literal[tuple(VALID_SOLUTIONS)]] = Field(description="List of recommended Salesforce solutions (can be empty)")
+        org_type: Literal["Developer", "Partner Developer", "Enterprise", ""] = Field(description="Recommended Salesforce org type")
         confirmation: bool = Field(description="Whether the user has confirmed or not")
 
     # Extract the last LLM response

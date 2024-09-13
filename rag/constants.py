@@ -17,6 +17,7 @@ Instructions:
 5. If you are certain you have identified all the relevant clouds, provide your answer only as a Python list: ['Cloud 1', 'Cloud 2', ...].
 6. If you need more information to make a definitive assessment, keep your response brief and simply say:
 "I'm not quite sure which clouds would be the best fit yet. Could you tell me more about [specific functionality or feature]?"
+7. Whenever you mention the clouds do not include the cloud keyword, for example do not mention "Health Cloud", rather mention only "Health"
 
 Remember to maintain a confident and helpful tone throughout your interaction with the user. 
 """
@@ -90,7 +91,7 @@ Instructions:
 
 6. Output Format:
    * If an org type is identified: `Org Edition: [Identified org type]`
-   * If no org type is explicitly mentioned: `Org Edition: Please specify the org edition\nTo ensure I recommend the most suitable org for your needs, could you please specify which type you're interested in: Developer, Partner Developer, or Enterprise?`
+   * If no org type is explicitly mentioned: `To ensure I recommend the most suitable org for your needs, could you please specify which type you're interested in: Developer, Partner Developer, or Enterprise?`
 
 7. Maintain a confident and helpful tone throughout the interaction.
 """
@@ -113,9 +114,10 @@ Otherwise, set `need_more_info` to `false` and leave the 'message' field empty
 Instructions:
 
 1. Check if any of the identified components (clouds, solutions, or org type) need further clarification.
-2. If so, set `need_more_info` to `true` and construct a concise and helpful message in the 'message' field prompting the user for more information.
+2. If so, set `need_more_info` to `true` and construct a concise and helpful message in the 'message' field prompting the user for more information based on the solutions, clouds and org type. Ask the user for all information you need on clouds, solutions and org types
 3. If no further clarification is needed, set `need_more_info` to `false` and leave the 'message' field empty
 4. Populate the `clouds`, `solutions`, and `org_type` fields with the identified values
+5. Whenever you mention the clouds do not include the cloud keyword, for example do not mention "Health Cloud", rather mention only "Health"
 
 **DO NOT include any additional formatting or markup for the JSON in the response.**
 
@@ -123,7 +125,7 @@ Ensure the final JSON response strictly adheres to the following structure:
 
 "clouds": ["Cloud 1", "Cloud 2", ...],
 "solutions": ["Solution 1", "Solution 2", ...],
-"org_type": "Identified org type",
+"org_type": "Identified org type" // if no org type then specify an empty string,
 "need_more_info": true/false,
 "message": "" // Or a message prompting for more information
 """
@@ -194,7 +196,7 @@ Message (if need_more_info is true):
 {message}
 
 Task:
-1. If `need_more_info` is False, present the identified clouds, solutions, and org type to the user in a clear and user-friendly manner, then ask if they want to proceed with org creation.
+1. If `need_more_info` is False, present the identified clouds, solutions, and org type to the user in a clear and user-friendly manner, then ask if they want to proceed with org creation including above addons?
 2. If `need_more_info` is True, present the identified clouds, solutions, and org type (if available) to the user, then clearly convey the `message` indicating what additional information is required.
 
 Output Format:
@@ -212,9 +214,9 @@ Instructions:
 
        Org Edition: {org_type}
        Target Clouds: Comma separated list the clouds from the clouds variable
-       Proposed Solutions: Comma separated list the solutions from the solutions variable, or say "None at this time" if the list is empty
+       Addon Solutions: Comma separated list the solutions from the solutions variable, or say "None at this time" if the list is empty
      
-      Would you like to proceed with org creation?
+      Would you like to proceed with org creation including above addons?
 
 3. If `need_more_info` is True:
    a. Construct a message like this:
@@ -222,12 +224,14 @@ Instructions:
 
       Org Edition: {org_type} if available, otherwise say "Not yet specified"
       Target Clouds: Comma separated list the clouds from the clouds variable, or say "Not yet identified" if the list is empty
-      Proposed Solutions: Comma separated list the solutions from the solutions variable, or say "Not yet identified" if the list is empty
+      Addon Solutions: Comma separated list the solutions from the solutions variable, or say "Not yet identified" if the list is empty
       
       However, to provide the most accurate recommendations, I need some more information:
 
-      {message}
+      Based on the message: {message} and the chat history ask for more information on the clouds, solutions and org types as appropriate
 4. Give the output only in the formats as mentioned above.
+6. Note that if org type is not present, give the message such as: 
+To ensure I recommend the most suitable org for your needs, could you please specify which type you're interested in: Developer, Partner Developer, or Enterprise?
 """
 
 CONFIRMATION_TEMPLATE = """
@@ -251,13 +255,13 @@ Instructions:
 2. Identify the last message in the chat history. 
 3. Look for phrases like "Can I proceed with the creation of this org?" or similar in the LAST message of the chat history to determine if the user has confirmed.
 4. Set the `confirmation` field to `true` if confirmation is found in the LAST message, otherwise set it to `false`.
-5. If any of the components (clouds, solutions, or org type) are not explicitly mentioned in the LAST LLM response, set their corresponding values in the JSON output to an empty list or "Not specified" as appropriate.
+5. If any of the components (clouds, solutions, or org type) are not explicitly mentioned in the LAST LLM response, set their corresponding values in the JSON output to an empty list or empty string as appropriate.
 
 **DO NOT include any additional formatting or markup for the JSON in the response.**
 
 Ensure the final JSON response strictly adheres to the following structure:
     "clouds": ["Cloud 1", "Cloud 2", ...],
     "solutions": ["Solution 1", "Solution 2", ...],
-    "org_type": "Identified org type",
+    "org_type": "Identified org type" // if no org type, then specify an empty string,
     "confirmation": true/false 
 """
