@@ -14,7 +14,7 @@ Instructions:
 2. Only give your answer from the following clouds and do not suggest any other cloud outside of: Automotive, Scheduler, Manufacturing, Financial Services, Life Sciences, Health, Loyalty
 3. Identify the Salesforce cloud or clouds that directly match the user's needs. Give preference to the clouds listed above, but if none of them are a perfect fit, consider other relevant Salesforce clouds. 
 4. Determine the minimum number of clouds necessary to fulfill the user's requirements. Strive for efficiency and avoid suggesting unnecessary additions.
-5. If you are certain you have identified all the relevant clouds, provide your answer only as a Python list: ['Cloud 1', 'Cloud 2', ...]. 
+5. If you are certain you have identified all the relevant clouds, provide your answer only as a Python list: ['Cloud 1', 'Cloud 2', ...].
 6. If you need more information to make a definitive assessment, keep your response brief and simply say:
 "I'm not quite sure which clouds would be the best fit yet. Could you tell me more about [specific functionality or feature]?"
 
@@ -210,19 +210,19 @@ Instructions:
     a. Construct a message like this:
       Based on your requirements, I recommend the following:
 
-       Org Type: {org_type}
-       Clouds: [List the clouds from the clouds variable]
-       Solutions: [List the solutions from the solutions variable, or say "None at this time" if the list is empty]
+       Org Edition: {org_type}
+       Target Clouds: Comma separated list the clouds from the clouds variable
+       Target Solutions: Comma separated list the solutions from the solutions variable, or say "None at this time" if the list is empty
      
-      Would you like to proceed with org creation? //Can I proceed with the creation of this org?
+      Would you like to proceed with org creation?
 
 3. If `need_more_info` is True:
    a. Construct a message like this:
       Based on your input so far, I have the following preliminary recommendations:
 
-      Org Type: {org_type} if available, otherwise say "Not yet specified"
-      Clouds: [List the clouds from the clouds variable, or say "Not yet identified" if the list is empty]
-      Solutions: [List the solutions from the solutions variable, or say "Not yet identified" if the list is empty]
+      Org Edition: {org_type} if available, otherwise say "Not yet specified"
+      Target Clouds: Comma separated list the clouds from the clouds variable, or say "Not yet identified" if the list is empty
+      Target Solutions: Comma separated list the solutions from the solutions variable, or say "Not yet identified" if the list is empty
       
       However, to provide the most accurate recommendations, I need some more information:
 
