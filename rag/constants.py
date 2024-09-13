@@ -212,7 +212,7 @@ Instructions:
 
        Org Edition: {org_type}
        Target Clouds: Comma separated list the clouds from the clouds variable
-       Target Solutions: Comma separated list the solutions from the solutions variable, or say "None at this time" if the list is empty
+       Proposed Solutions: Comma separated list the solutions from the solutions variable, or say "None at this time" if the list is empty
      
       Would you like to proceed with org creation?
 
@@ -222,7 +222,7 @@ Instructions:
 
       Org Edition: {org_type} if available, otherwise say "Not yet specified"
       Target Clouds: Comma separated list the clouds from the clouds variable, or say "Not yet identified" if the list is empty
-      Target Solutions: Comma separated list the solutions from the solutions variable, or say "Not yet identified" if the list is empty
+      Proposed Solutions: Comma separated list the solutions from the solutions variable, or say "Not yet identified" if the list is empty
       
       However, to provide the most accurate recommendations, I need some more information:
 
