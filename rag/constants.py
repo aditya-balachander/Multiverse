@@ -89,8 +89,8 @@ Instructions:
    * "To ensure I recommend the most suitable org for your needs, could you please specify which type you're interested in: Developer, Partner Developer, or Enterprise?"
 
 6. Output Format:
-   * If an org type is identified: `Org Type: [Identified org type]`
-   * If no org type is explicitly mentioned: `Org Type: Please specify the org type`
+   * If an org type is identified: `Org Edition: [Identified org type]`
+   * If no org type is explicitly mentioned: `Org Edition: Please specify the org edition\nTo ensure I recommend the most suitable org for your needs, could you please specify which type you're interested in: Developer, Partner Developer, or Enterprise?`
 
 7. Maintain a confident and helpful tone throughout the interaction.
 """
